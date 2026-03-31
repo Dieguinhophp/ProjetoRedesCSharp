@@ -1,0 +1,15 @@
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.exe
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.deps.json
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.runtimeconfig.json
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.pdb
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.AssemblyInfoInputs.cache
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.AssemblyInfo.cs
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.csproj.CoreCompileInputs.cache
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.sourcelink.json
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\refint\Servidor.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.pdb
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\Servidor.genruntimeconfig.cache
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\obj\Debug\net10.0\ref\Servidor.dll
