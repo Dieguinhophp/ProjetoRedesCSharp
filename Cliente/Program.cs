@@ -18,16 +18,29 @@ class Cliente
         Thread t = new Thread(ReceberMensagens);
         t.Start();
 
+        Console.Write("Digite seu nome: ");
+        string nome = Console.ReadLine();
+
+        
+        string mensagemNome = "NOME|" + nome;
+        byte[] dadosNome = Encoding.UTF8.GetBytes(mensagemNome);
+        stream.Write(dadosNome, 0, dadosNome.Length);
+
+
+
         while (true)
         {
             string msg = Console.ReadLine();
-            byte[] dados = Encoding.UTF8.GetBytes(msg);
+            string mensagem = "MSG|" + msg;
+
+            byte[] dados = Encoding.UTF8.GetBytes(mensagem);
             stream.Write(dados, 0, dados.Length);
         }
     }
 
     static void ReceberMensagens()
     {
+        
         byte[] buffer = new byte[1024];
 
         while (true)
@@ -35,7 +48,7 @@ class Cliente
             int bytes = stream.Read(buffer, 0, buffer.Length);
             string mensagem = Encoding.UTF8.GetString(buffer, 0, bytes);
 
-            Console.WriteLine("Mensagem: " + mensagem);
+            Console.WriteLine(mensagem);
         }
     }
 }
