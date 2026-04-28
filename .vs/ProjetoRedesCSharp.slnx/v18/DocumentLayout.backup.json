@@ -11,8 +11,12 @@
       "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\servidor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\servidor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\servidor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\servidor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,20 +29,28 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Servidor.csproj",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Servidor.csproj",
               "RelativeDocumentMoniker": "Servidor\\Servidor.csproj",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Servidor.csproj",
               "RelativeToolTip": "Servidor\\Servidor.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-07T00:24:29.819Z"
+              "WhenOpened": "2026-04-28T17:38:45.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Banco.cs",
+              "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Banco.cs",
+              "RelativeDocumentMoniker": "Servidor\\Banco.cs",
+              "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Banco.cs",
+              "RelativeToolTip": "Servidor\\Banco.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T16:53:30.525Z"
             },
             {
               "$type": "Document",
@@ -48,7 +60,7 @@
               "RelativeDocumentMoniker": "Servidor\\Program.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Program.cs",
               "RelativeToolTip": "Servidor\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowD4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-31T15:59:55.816Z"
             },
@@ -60,7 +72,7 @@
               "RelativeDocumentMoniker": "Cliente\\Program.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Cliente\\Program.cs",
               "RelativeToolTip": "Cliente\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-31T16:01:45.213Z",
               "EditorCaption": ""

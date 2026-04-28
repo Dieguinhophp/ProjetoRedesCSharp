@@ -3,7 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-
+using System.IO;
+using System.Collections.Generic;
 
 class Servidor
 {
@@ -13,6 +14,8 @@ class Servidor
 
     static void Main()
     {
+        Banco.Inicializar();
+
         servidor = new TcpListener(IPAddress.Any, 5000);
         servidor.Start();
 
@@ -33,40 +36,72 @@ class Servidor
     static void AtenderCliente(TcpClient cliente)
     {
         NetworkStream stream = cliente.GetStream();
-        byte[] buffer = new byte[1024];
 
-        while (true)
+        StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+        StreamWriter writer = new StreamWriter(stream, new UTF8Encoding(false)) { AutoFlush = true };
+
+        try
         {
-            int bytes = stream.Read(buffer, 0, buffer.Length);
-            string mensagem = Encoding.UTF8.GetString(buffer, 0, bytes);
-
-            string[] partes = mensagem.Split('|');
-
-            if (partes[0] == "NOME")
+            while (true)
             {
-                nomes[cliente] = partes[1];
-                Console.WriteLine($"Cliente identificado como: {partes[1]}");
-            }
-            else if (partes[0] == "MSG")
-            {
-                string nome = nomes.ContainsKey(cliente) ? nomes[cliente] : "Desconhecido";
-                string msgFinal = nome + ": " + partes[1];
+                string mensagem = reader.ReadLine();
 
-                Console.WriteLine(msgFinal);
-                EnviarParaTodos(msgFinal);
+                if (mensagem == null)
+                    break;
+
+                string[] partes = mensagem.Split('|');
+
+                if (partes[0] == "LOGIN")
+                {
+                    bool sucesso = Banco.Login(partes[1], partes[2]);
+
+                    if (sucesso)
+                        nomes[cliente] = partes[1];
+
+                    writer.WriteLine(sucesso ? "LOGIN_OK" : "LOGIN_ERRO");
+                }
+                else if (partes[0] == "REGISTER")
+                {
+                    bool sucesso = Banco.Registrar(partes[1], partes[2]);
+                    writer.WriteLine(sucesso ? "REGISTER_OK" : "REGISTER_ERRO");
+                }
+                else if (partes[0] == "MSG")
+                {
+                    string nome = nomes.ContainsKey(cliente) ? nomes[cliente] : "Desconhecido";
+                    string msgFinal = nome + ": " + partes[1];
+
+                    Console.WriteLine(msgFinal);
+                    EnviarParaTodos(msgFinal);
+                }
             }
+        }
+        catch
+        {
+            Console.WriteLine("Cliente desconectado.");
+        }
+        finally
+        {
+            clientes.Remove(cliente);
+            nomes.Remove(cliente);
+            cliente.Close();
         }
     }
 
     static void EnviarParaTodos(string mensagem)
     {
-        
-        byte[] dados = Encoding.UTF8.GetBytes(mensagem);
-
         foreach (var cliente in clientes)
         {
-            NetworkStream stream = cliente.GetStream();
-            stream.Write(dados, 0, + dados.Length);
+            try
+            {
+                NetworkStream stream = cliente.GetStream();
+                StreamWriter writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };
+
+                writer.WriteLine(mensagem);
+            }
+            catch
+            {
+                // ignora erro
+            }
         }
     }
 }

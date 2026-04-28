@@ -2,53 +2,75 @@
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.IO;
 
 class Cliente
 {
     static TcpClient cliente;
     static NetworkStream stream;
+    static StreamReader reader;
+    static StreamWriter writer;
 
     static void Main()
     {
-        cliente = new TcpClient("127.0.0.1", 5000);
+        Console.Write("Digite o IP do servidor: ");
+        string ip = Console.ReadLine();
+
+        cliente = new TcpClient(ip, 5000);
         stream = cliente.GetStream();
+
+        reader = new StreamReader(stream, Encoding.UTF8);
+        writer = new StreamWriter(stream, new UTF8Encoding(false)) { AutoFlush = true };
+
+        Console.WriteLine("1 - Login");
+        Console.WriteLine("2 - Registrar");
+        string opcao = Console.ReadLine();
+
+        Console.Write("Usuário: ");
+        string user = Console.ReadLine();
+
+        Console.Write("Senha: ");
+        string pass = Console.ReadLine();
+
+        string mensagem = opcao == "1"
+            ? $"LOGIN|{user}|{pass}"
+            : $"REGISTER|{user}|{pass}";
+
+        writer.WriteLine(mensagem);
+
+        string resposta = reader.ReadLine();
+
+        Console.WriteLine("Servidor: " + resposta);
+
+        if (resposta != "LOGIN_OK")
+        {
+            Console.WriteLine("Falha no login!");
+            return;
+        }
+       
 
         Console.WriteLine("Conectado ao servidor!");
 
         Thread t = new Thread(ReceberMensagens);
         t.Start();
 
-        Console.Write("Digite seu nome: ");
-        string nome = Console.ReadLine();
-
-        
-        string mensagemNome = "NOME|" + nome;
-        byte[] dadosNome = Encoding.UTF8.GetBytes(mensagemNome);
-        stream.Write(dadosNome, 0, dadosNome.Length);
-
-
-
         while (true)
         {
             string msg = Console.ReadLine();
-            string mensagem = "MSG|" + msg;
-
-            byte[] dados = Encoding.UTF8.GetBytes(mensagem);
-            stream.Write(dados, 0, dados.Length);
+            writer.WriteLine("MSG|" + msg);
         }
     }
 
     static void ReceberMensagens()
     {
-        
-        byte[] buffer = new byte[1024];
-
         while (true)
         {
-            int bytes = stream.Read(buffer, 0, buffer.Length);
-            string mensagem = Encoding.UTF8.GetString(buffer, 0, bytes);
+            string mensagem = reader.ReadLine();
 
-            Console.WriteLine(mensagem);
+            if (mensagem != null)
+            {
+                Console.WriteLine(mensagem);
+            }
         }
     }
 }

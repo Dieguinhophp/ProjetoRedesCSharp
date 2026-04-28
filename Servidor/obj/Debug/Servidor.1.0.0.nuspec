@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Servidor</id>
+    <version>1.0.0</version>
+    <authors>Servidor</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="81c9e846c9a3b6d0041e1c46deb4d088389f6b5e" />
+    <dependencies>
+      <group targetFramework="net10.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.runtimeconfig.json" target="lib\net10.0\Servidor.runtimeconfig.json" />
+    <file src="C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\Servidor\bin\Debug\net10.0\Servidor.dll" target="lib\net10.0\Servidor.dll" />
+  </files>
+</package>
