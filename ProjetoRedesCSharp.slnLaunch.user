@@ -11,5 +11,18 @@
         "Action": "Start"
       }
     ]
+  },
+  {
+    "Name": "TesteServidorEForms",
+    "Projects": [
+      {
+        "Path": "Servidor\\Servidor.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ClienteWinForms\\ClienteWinForms.csproj",
+        "Action": "Start"
+      }
+    ]
   }
 ]

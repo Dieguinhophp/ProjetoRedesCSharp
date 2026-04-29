@@ -6,7 +6,7 @@ using System.Threading;
 using System.IO;
 using System.Collections.Generic;
 
-class Servidor
+class  Servidor
 {
     static TcpListener servidor;
     static List<TcpClient> clientes = new List<TcpClient>();
