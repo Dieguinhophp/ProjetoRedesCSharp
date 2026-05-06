@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.IO;
-using System.Threading;
 
 
 
@@ -21,9 +14,12 @@ namespace ClienteWinForms
         TcpClient cliente;
         StreamReader reader;
         StreamWriter writer;
-        public FormLogin()
+        public FormLogin(TcpClient c, StreamReader r, StreamWriter w)
         {
             InitializeComponent();
+            cliente = c;
+            reader = r;
+            writer = w;
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -40,7 +36,7 @@ namespace ClienteWinForms
         {
             try
             {
-                cliente = new TcpClient("192.168.15.183", 5000);
+                
 
                 var stream = cliente.GetStream();
 
@@ -72,10 +68,29 @@ namespace ClienteWinForms
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            writer.WriteLine($"REGISTER|{txtUsuario.Text}|{txtSenha.Text}");
+            try
+            {
+                writer.WriteLine($"REGISTER|{txtUsuario.Text}|{txtSenha.Text}");
 
-            string resposta = reader.ReadLine();
-            MessageBox.Show(resposta);
+                string resposta = reader.ReadLine();
+
+                if (resposta == "REGISTER_OK")
+                {
+                    MessageBox.Show("Usuário registrado com sucesso!", "Sucesso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao registrar! Usuário pode já existir.", "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao comunicar com o servidor!", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

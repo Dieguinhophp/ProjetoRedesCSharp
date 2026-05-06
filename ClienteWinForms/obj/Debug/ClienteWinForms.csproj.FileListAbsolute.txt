@@ -9,3 +9,4 @@ C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin\Debug\ClienteWinForms.pdb
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\ClienteWinForms.exe
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\ClienteWinForms.pdb
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\ClienteWinForms.FormIp.resources

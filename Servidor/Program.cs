@@ -21,6 +21,16 @@ class  Servidor
 
         Console.WriteLine("Servidor iniciado...");
 
+        var host = Dns.GetHostEntry(Dns.GetHostName());
+
+        foreach (var ip in host.AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                Console.WriteLine("IP: " + ip.ToString());
+            }
+        }
+
         while (true)
         {
             TcpClient cliente = servidor.AcceptTcpClient();
