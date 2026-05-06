@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9F756C50-AA2A-4736-B89F-05285EC45207}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 549,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -71,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormLogin.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormLogin.cs",
@@ -84,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "FormLogin.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormLogin.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormLogin.cs",
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "FormChat.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormChat.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormChat.cs",
@@ -108,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Banco.cs",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Banco.cs",
               "RelativeDocumentMoniker": "Servidor\\Banco.cs",
@@ -116,8 +116,7 @@
               "RelativeToolTip": "Servidor\\Banco.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T16:53:30.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-28T16:53:30.525Z"
             },
             {
               "$type": "Document",
@@ -129,12 +128,11 @@
               "RelativeToolTip": "Servidor\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T15:59:55.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-31T15:59:55.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Cliente\\Program.cs",
               "RelativeDocumentMoniker": "Cliente\\Program.cs",
@@ -142,8 +140,7 @@
               "RelativeToolTip": "Cliente\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T16:01:45.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-31T16:01:45.213Z"
             }
           ]
         },
