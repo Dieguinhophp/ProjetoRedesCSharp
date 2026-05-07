@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Net.Sockets;
+using System.Drawing;
 using System.IO;
+using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace ClienteWinForms
 {
@@ -22,7 +23,7 @@ namespace ClienteWinForms
             reader = r;
             writer = w;
             usuario = user;
-
+            
             lblUsuario.Text = "Usuário: " + usuario;
 
 
@@ -66,8 +67,29 @@ namespace ClienteWinForms
                     {
                         Invoke(new Action(() =>
                         {
-                            rtbChat.AppendText(msg + Environment.NewLine);
-                            rtbChat.ScrollToCaret();
+                            if (msg.StartsWith("USERS|"))
+                            {
+                                string lista = msg.Replace("USERS|", "");
+                                string[] usuarios = lista.Split(',');
+                                lstUsuarios.Items.Clear();
+
+                                foreach (var u in usuarios)
+                                {
+                                    if (!string.IsNullOrWhiteSpace(u))
+                                        lstUsuarios.Items.Add(u);
+                                }
+                            }
+                            else
+                            {
+                                
+                                if (msg.StartsWith(usuario + ":"))
+                                    rtbChat.SelectionColor = Color.White;
+                                else
+                                    rtbChat.SelectionColor = Color.ForestGreen;
+
+                                rtbChat.AppendText(msg + Environment.NewLine);
+                                rtbChat.ScrollToCaret();
+                            }
                         }));
                     }
                 }
@@ -91,6 +113,27 @@ namespace ClienteWinForms
 
         }
 
-        
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja sair?", "Logout",
+            MessageBoxButtons.YesNo) == DialogResult.Yes)  
+            {
+                try
+            {
+                writer.WriteLine("LOGOUT");
+            }
+            catch { }
+
+                try
+                {
+                    cliente.Close();
+                }
+                catch { }
+
+                
+                
+
+                this.Close();}
+        }
     }
 }

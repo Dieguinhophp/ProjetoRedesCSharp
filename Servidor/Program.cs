@@ -1,12 +1,10 @@
-﻿using System;
+﻿
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
-using System.IO;
-using System.Collections.Generic;
 
-class  Servidor
+
+class Servidor
 {
     static TcpListener servidor;
     static List<TcpClient> clientes = new List<TcpClient>();
@@ -69,6 +67,7 @@ class  Servidor
                         nomes[cliente] = partes[1];
 
                     writer.WriteLine(sucesso ? "LOGIN_OK" : "LOGIN_ERRO");
+                    EnviarListaUsuarios();
                 }
                 else if (partes[0] == "REGISTER")
                 {
@@ -82,6 +81,19 @@ class  Servidor
 
                     Console.WriteLine(msgFinal);
                     EnviarParaTodos(msgFinal);
+
+                }
+                else if (partes[0] == "LOGOUT")
+                {
+                    Console.WriteLine("Cliente saiu.");
+
+                    clientes.Remove(cliente);
+                    nomes.Remove(cliente);
+
+                    EnviarListaUsuarios();
+
+                    cliente.Close();
+                    break;
                 }
             }
         }
@@ -93,6 +105,7 @@ class  Servidor
         {
             clientes.Remove(cliente);
             nomes.Remove(cliente);
+            EnviarListaUsuarios();
             cliente.Close();
         }
     }
@@ -112,6 +125,36 @@ class  Servidor
             {
                 // ignora erro
             }
+        }
+    }
+
+    static void EnviarListaUsuarios()
+    {
+        string lista = "USERS|";
+
+        foreach (var nome in nomes.Values)
+        {
+            lista += nome + ",";
+        }
+        lista = lista.TrimEnd(',');
+
+        foreach (var cliente in clientes)
+        {
+            try
+            {
+                NetworkStream stream = cliente.GetStream();
+                StreamWriter writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };
+
+                writer.WriteLine(lista);
+            }
+            catch
+            {
+                clientes.Remove(cliente);
+                nomes.Remove(cliente);
+
+                EnviarListaUsuarios();
+            }
+
         }
     }
 }

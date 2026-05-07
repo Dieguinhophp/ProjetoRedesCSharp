@@ -32,8 +32,12 @@
             this.txtMensagem = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.lstUsuarios = new System.Windows.Forms.ListBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,12 +86,37 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panelTop.Controls.Add(this.btnLogout);
+            this.panelTop.Controls.Add(this.label1);
             this.panelTop.Controls.Add(this.lblUsuario);
+            this.panelTop.Controls.Add(this.lblStatus);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(784, 50);
             this.panelTop.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label1.Location = new System.Drawing.Point(515, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "🟢";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblStatus.Location = new System.Drawing.Point(468, 17);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(53, 15);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "Online: ";
             // 
             // lblUsuario
             // 
@@ -109,12 +138,40 @@
             this.panelBottom.Size = new System.Drawing.Size(784, 25);
             this.panelBottom.TabIndex = 4;
             // 
+            // lstUsuarios
+            // 
+            this.lstUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.lstUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstUsuarios.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstUsuarios.ForeColor = System.Drawing.Color.White;
+            this.lstUsuarios.FormattingEnabled = true;
+            this.lstUsuarios.ItemHeight = 15;
+            this.lstUsuarios.Location = new System.Drawing.Point(645, 56);
+            this.lstUsuarios.Name = "lstUsuarios";
+            this.lstUsuarios.Size = new System.Drawing.Size(120, 255);
+            this.lstUsuarios.TabIndex = 5;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(690, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Sair";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // FormChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.lstUsuarios);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.btnEnviar);
@@ -138,5 +195,9 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Panel panelBottom;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lstUsuarios;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
