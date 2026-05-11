@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="Cliente/Cliente.csproj" />
-  <Project Path="ClienteWinForms/ClienteWinForms.csproj" Id="9f756c50-aa2a-4736-b89f-05285ec45207" />
+  <Project Path="ClienteWinForms/ClienteWinForms.csproj" Id="3ce26f7d-eafb-4966-9ad9-87051b57215e" />
   <Project Path="Servidor/Servidor.csproj" />
 </Solution>

@@ -91,6 +91,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "FormIp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormIp";
             this.ResumeLayout(false);
             this.PerformLayout();
