@@ -18,3 +18,10 @@ C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.pdb
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.genruntimeconfig.cache
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ref\ClienteWinForms.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin\Debug\net10.0-windows\OpenCvSharp.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin\Debug\net10.0-windows\OpenCvSharp.Extensions.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin\Debug\net10.0-windows\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin\Debug\net10.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg4130_64.dll
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.csproj.AssemblyReference.cache
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteW.63BAC919.Up2Date
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.FormVideo.resources

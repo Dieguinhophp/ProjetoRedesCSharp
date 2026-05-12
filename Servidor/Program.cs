@@ -45,8 +45,14 @@ class Servidor
     {
         NetworkStream stream = cliente.GetStream();
 
-        StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-        StreamWriter writer = new StreamWriter(stream, new UTF8Encoding(false)) { AutoFlush = true };
+        StreamReader reader =
+            new StreamReader(stream, Encoding.UTF8);
+
+        StreamWriter writer =
+            new StreamWriter(stream, new UTF8Encoding(false))
+            {
+                AutoFlush = true
+            };
 
         try
         {
@@ -54,59 +60,122 @@ class Servidor
             {
                 string mensagem = reader.ReadLine();
 
-                if (mensagem == null)
+                if (string.IsNullOrWhiteSpace(mensagem))
                     break;
+
 
                 string[] partes = mensagem.Split('|');
 
-                if (partes[0] == "LOGIN")
+                if (partes.Length == 0)
+                    continue;
+
+                switch (partes[0])
                 {
-                    bool sucesso = Banco.Login(partes[1], partes[2]);
+                    case "LOGIN":
 
-                    if (sucesso)
-                        nomes[cliente] = partes[1];
+                        if (partes.Length < 3)
+                        {
+                            writer.WriteLine("LOGIN_ERRO");
+                            continue;
+                        }
 
-                    writer.WriteLine(sucesso ? "LOGIN_OK" : "LOGIN_ERRO");
-                    EnviarListaUsuarios();
-                }
-                else if (partes[0] == "REGISTER")
-                {
-                    bool sucesso = Banco.Registrar(partes[1], partes[2]);
-                    writer.WriteLine(sucesso ? "REGISTER_OK" : "REGISTER_ERRO");
-                }
-                else if (partes[0] == "MSG")
-                {
-                    string nome = nomes.ContainsKey(cliente) ? nomes[cliente] : "Desconhecido";
-                    string msgFinal = nome + ": " + partes[1];
+                        bool login =
+                            Banco.Login(partes[1], partes[2]);
 
-                    Console.WriteLine(msgFinal);
-                    EnviarParaTodos(msgFinal);
+                        if (login)
+                        {
+                            nomes[cliente] = partes[1];
 
-                }
-                else if (partes[0] == "LOGOUT")
-                {
-                    Console.WriteLine("Cliente saiu.");
+                            writer.WriteLine("LOGIN_OK");
 
-                    clientes.Remove(cliente);
-                    nomes.Remove(cliente);
+                            Thread.Sleep(100);
 
-                    EnviarListaUsuarios();
+                            EnviarListaUsuarios();
 
-                    cliente.Close();
-                    break;
+                            Console.WriteLine(partes[1] + " entrou.");
+                        }
+                        else
+                        {
+                            writer.WriteLine("LOGIN_ERRO");
+                        }
+
+                        break;
+
+                    case "REGISTER":
+
+                        if (partes.Length < 3)
+                        {
+                            writer.WriteLine("REGISTER_ERRO");
+                            continue;
+                        }
+
+                        bool registro =
+                            Banco.Registrar(partes[1], partes[2]);
+
+                        writer.WriteLine(
+                            registro
+                            ? "REGISTER_OK"
+                            : "REGISTER_ERRO"
+                        );
+
+                        break;
+
+                    case "MSG":
+
+                        if (partes.Length < 2)
+                            continue;
+
+                        string nome =
+                            nomes.ContainsKey(cliente)
+                            ? nomes[cliente]
+                            : "Desconhecido";
+
+                        string msgFinal =
+                            nome + ": " + partes[1];
+
+                        Console.WriteLine(msgFinal);
+
+                        EnviarParaTodos(msgFinal);
+
+                        break;
+
+                    case "LOGOUT":
+
+                        Console.WriteLine("Cliente saiu.");
+
+                        clientes.Remove(cliente);
+
+                        if (nomes.ContainsKey(cliente))
+                            nomes.Remove(cliente);
+
+                        EnviarListaUsuarios();
+
+                        cliente.Close();
+
+                        return;
                 }
             }
         }
-        catch
+        catch (Exception ex)
         {
-            Console.WriteLine("Cliente desconectado.");
+            Console.WriteLine("Erro cliente: " + ex.Message);
         }
         finally
         {
             clientes.Remove(cliente);
-            nomes.Remove(cliente);
+
+            if (nomes.ContainsKey(cliente))
+                nomes.Remove(cliente);
+
             EnviarListaUsuarios();
-            cliente.Close();
+
+            try
+            {
+                cliente.Close();
+            }
+            catch { }
+
+            Console.WriteLine("Cliente desconectado.");
         }
     }
 
@@ -136,25 +205,43 @@ class Servidor
         {
             lista += nome + ",";
         }
+
         lista = lista.TrimEnd(',');
+
+        List<TcpClient> desconectados = new List<TcpClient>();
 
         foreach (var cliente in clientes)
         {
             try
             {
                 NetworkStream stream = cliente.GetStream();
-                StreamWriter writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };
+
+                StreamWriter writer =
+                    new StreamWriter(stream, Encoding.UTF8)
+                    {
+                        AutoFlush = true
+                    };
 
                 writer.WriteLine(lista);
             }
             catch
             {
-                clientes.Remove(cliente);
-                nomes.Remove(cliente);
-
-                EnviarListaUsuarios();
+                desconectados.Add(cliente);
             }
+        }
 
+        foreach (var c in desconectados)
+        {
+            clientes.Remove(c);
+
+            if (nomes.ContainsKey(c))
+                nomes.Remove(c);
+
+            try
+            {
+                c.Close();
+            }
+            catch { }
         }
     }
 }

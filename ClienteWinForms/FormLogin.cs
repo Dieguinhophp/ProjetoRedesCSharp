@@ -36,13 +36,6 @@ namespace ClienteWinForms
         {
             try
             {
-                
-
-                var stream = cliente.GetStream();
-
-                reader = new StreamReader(stream, new UTF8Encoding(false));
-                writer = new StreamWriter(stream, new UTF8Encoding(false)) { AutoFlush = true };
-
                 writer.WriteLine($"LOGIN|{txtUsuario.Text}|{txtSenha.Text}");
 
                 string resposta = reader.ReadLine();
@@ -68,6 +61,13 @@ namespace ClienteWinForms
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
+            string.IsNullOrWhiteSpace(txtSenha.Text))
+            {
+                MessageBox.Show("Preencha usuário e senha!");
+                return;
+            }
+
             try
             {
                 writer.WriteLine($"REGISTER|{txtUsuario.Text}|{txtSenha.Text}");
@@ -90,6 +90,7 @@ namespace ClienteWinForms
                 MessageBox.Show("Erro ao comunicar com o servidor!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
         }
     }

@@ -1,29 +1,32 @@
-﻿using System;
+﻿using System.Net.Sockets;
+using OpenCvSharp;
+using OpenCvSharp.Extensions;
 using System.Drawing;
-using System.IO;
-using System.Net.Sockets;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace ClienteWinForms
 {
-    public partial class FormChat: Form
+    public partial class FormChat : Form
     {
+
+
         TcpClient cliente;
         StreamReader reader;
         StreamWriter writer;
         string usuario;
+
+
 
         public FormChat(TcpClient c, StreamReader r, StreamWriter w, string user)
         {
 
             InitializeComponent();
 
+
             cliente = c;
             reader = r;
             writer = w;
             usuario = user;
-            
+
             lblUsuario.Text = "Usuário: " + usuario;
 
 
@@ -31,7 +34,7 @@ namespace ClienteWinForms
             t.IsBackground = true;
             t.Start();
 
-            
+
 
         }
 
@@ -63,35 +66,35 @@ namespace ClienteWinForms
                 {
                     string msg = reader.ReadLine();
 
-                    if (msg != null)
+                    if (msg == null)
+                        break;
+
+                    Invoke(new Action(() =>
                     {
-                        Invoke(new Action(() =>
+                        if (msg.StartsWith("USERS|"))
                         {
-                            if (msg.StartsWith("USERS|"))
-                            {
-                                string lista = msg.Replace("USERS|", "");
-                                string[] usuarios = lista.Split(',');
-                                lstUsuarios.Items.Clear();
+                            string lista = msg.Replace("USERS|", "");
+                            string[] usuarios = lista.Split(',');
 
-                                foreach (var u in usuarios)
-                                {
-                                    if (!string.IsNullOrWhiteSpace(u))
-                                        lstUsuarios.Items.Add(u);
-                                }
+                            lstUsuarios.Items.Clear();
+
+                            foreach (var u in usuarios)
+                            {
+                                if (!string.IsNullOrWhiteSpace(u))
+                                    lstUsuarios.Items.Add(u);
                             }
+                        }
+                        else
+                        {
+                            if (msg.StartsWith(usuario + ":"))
+                                rtbChat.SelectionColor = Color.White;
                             else
-                            {
-                                
-                                if (msg.StartsWith(usuario + ":"))
-                                    rtbChat.SelectionColor = Color.White;
-                                else
-                                    rtbChat.SelectionColor = Color.ForestGreen;
+                                rtbChat.SelectionColor = Color.ForestGreen;
 
-                                rtbChat.AppendText(msg + Environment.NewLine);
-                                rtbChat.ScrollToCaret();
-                            }
-                        }));
-                    }
+                            rtbChat.AppendText(msg + Environment.NewLine);
+                            rtbChat.ScrollToCaret();
+                        }
+                    }));
                 }
             }
             catch
@@ -116,13 +119,13 @@ namespace ClienteWinForms
         private void btnLogout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja sair?", "Logout",
-            MessageBoxButtons.YesNo) == DialogResult.Yes)  
+            MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
-            {
-                writer.WriteLine("LOGOUT");
-            }
-            catch { }
+                {
+                    writer.WriteLine("LOGOUT");
+                }
+                catch { }
 
                 try
                 {
@@ -130,10 +133,22 @@ namespace ClienteWinForms
                 }
                 catch { }
 
-                
-                
 
-                this.Close();}
+
+
+                this.Close();
+            }
+        }
+
+        
+
+        private void btnVideoCall_Click(object sender, EventArgs e)
+        {
+            FormVideo video = new FormVideo(cliente, reader, writer, usuario);
+
+            video.Show();
         }
     }
 }
+
+

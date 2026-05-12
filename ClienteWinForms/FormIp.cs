@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace ClienteWinForms
 {
+
+
     public partial class FormIp : Form
     {
-        TcpClient cliente;
-        StreamReader reader;
-        StreamWriter writer;
+        
         public FormIp()
         {
             InitializeComponent();
@@ -26,24 +26,30 @@ namespace ClienteWinForms
         {
             try
             {
-                cliente = new TcpClient(txtIp.Text, 5000);
+                TcpClient cliente =
+                    new TcpClient(txtIp.Text, 5000);
 
-                var stream = cliente.GetStream();
+                NetworkStream stream = cliente.GetStream();
 
-                reader = new StreamReader(stream, new UTF8Encoding(false));
-                writer = new StreamWriter(stream, new UTF8Encoding(false)) { AutoFlush = true };
+                StreamReader reader =
+                    new StreamReader(stream, Encoding.UTF8);
 
-                MessageBox.Show("Conectado ao servidor!");
+                StreamWriter writer =
+                    new StreamWriter(stream, Encoding.UTF8)
+                    {
+                        AutoFlush = true
+                    };
 
-                
-                FormLogin login = new FormLogin(cliente, reader, writer);
+                FormLogin login =
+                    new FormLogin(cliente, reader, writer);
+
                 login.Show();
 
                 this.Hide();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao conectar ao servidor!");
+                MessageBox.Show(ex.Message);
             }
         }
     }
