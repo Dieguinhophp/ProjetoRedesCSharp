@@ -139,6 +139,18 @@ class Servidor
 
                         break;
 
+                    case "WEBCAM":
+
+                        if (partes.Length < 2)
+                            continue;
+
+                        string frameBase64 = partes[1];
+
+                        EnviarWebcamParaTodos(frameBase64, cliente);
+
+                        break;
+
+
                     case "LOGOUT":
 
                         Console.WriteLine("Cliente saiu.");
@@ -196,6 +208,34 @@ class Servidor
             }
         }
     }
+
+    static void EnviarWebcamParaTodos(string frame, TcpClient remetente)
+    {
+        foreach (var cliente in clientes)
+        {
+            try
+            {
+                if (cliente == remetente)
+                    continue;
+
+                NetworkStream stream = cliente.GetStream();
+
+                StreamWriter writer =
+                    new StreamWriter(stream, Encoding.UTF8)
+                    {
+                        AutoFlush = true
+                    };
+
+                writer.WriteLine("WEBCAM|" + frame);
+            }
+            catch
+            {
+
+            }
+        }
+    }
+
+
 
     static void EnviarListaUsuarios()
     {

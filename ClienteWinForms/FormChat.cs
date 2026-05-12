@@ -133,9 +133,6 @@ namespace ClienteWinForms
                 }
                 catch { }
 
-
-
-
                 this.Close();
             }
         }
