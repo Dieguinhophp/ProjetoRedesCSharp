@@ -26,22 +26,19 @@ namespace ClienteWinForms
         {
             try
             {
-                TcpClient cliente =
-                    new TcpClient(txtIp.Text, 5000);
+                TcpClient cliente = new TcpClient(txtIp.Text, 5000);
 
                 NetworkStream stream = cliente.GetStream();
 
-                StreamReader reader =
-                    new StreamReader(stream, Encoding.UTF8);
+                StreamReader reader = new StreamReader(stream, Encoding.UTF8);
 
-                StreamWriter writer =
-                    new StreamWriter(stream, Encoding.UTF8)
-                    {
-                        AutoFlush = true
-                    };
+                StreamWriter writer = new StreamWriter(stream, Encoding.UTF8)
+                {
+                    AutoFlush = true
+                };
+                
 
-                FormLogin login =
-                    new FormLogin(cliente, reader, writer);
+                FormLogin login = new FormLogin(cliente, reader, writer, txtIp.Text);
 
                 login.Show();
 

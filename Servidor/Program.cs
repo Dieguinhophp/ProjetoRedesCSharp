@@ -10,12 +10,20 @@ class Servidor
     static List<TcpClient> clientes = new List<TcpClient>();
     static Dictionary<TcpClient, string> nomes = new Dictionary<TcpClient, string>();
 
+
+    static TcpListener webcamServidor;
+    static List<TcpClient> webcamClientes = new List<TcpClient>();
     static void Main()
     {
         Banco.Inicializar();
 
         servidor = new TcpListener(IPAddress.Any, 5000);
         servidor.Start();
+
+        webcamServidor = new TcpListener(IPAddress.Any, 6000);
+        webcamServidor.Start();
+
+        Console.WriteLine("Servidor webcam iniciado na porta 6000");
 
         Console.WriteLine("Servidor iniciado...");
 
@@ -28,6 +36,13 @@ class Servidor
                 Console.WriteLine("IP: " + ip.ToString());
             }
         }
+        Thread webcamThread = new Thread(AceitarWebcams);
+
+        webcamThread.IsBackground = true;
+
+        webcamThread.Start();
+
+
 
         while (true)
         {
@@ -208,6 +223,89 @@ class Servidor
             }
         }
     }
+
+    static void ReceberWebcam(TcpClient cliente)
+    {
+        try
+        {
+            NetworkStream stream =
+                cliente.GetStream();
+
+            StreamReader reader =
+                new StreamReader(stream, Encoding.UTF8);
+
+            while (true)
+            {
+                string frame = reader.ReadLine();
+
+                if (frame == null)
+                    break;
+
+                foreach (var c in webcamClientes)
+                {
+                    try
+                    {
+                        if (c == cliente)
+                            continue;
+
+                        StreamWriter writer =
+                            new StreamWriter(
+                                c.GetStream(),
+                                Encoding.UTF8)
+                            {
+                                AutoFlush = true
+                            };
+
+                        writer.WriteLine(frame);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+        }
+        catch
+        {
+
+        }
+        finally
+        {
+            webcamClientes.Remove(cliente);
+
+            try
+            {
+                cliente.Close();
+            }
+            catch
+            {
+
+            }
+
+            Console.WriteLine("Cliente webcam desconectado.");
+        }
+    }
+
+
+    static void AceitarWebcams()
+    {
+        while (true)
+        {
+            TcpClient cliente =
+                webcamServidor.AcceptTcpClient();
+
+            webcamClientes.Add(cliente);
+
+            Console.WriteLine("Cliente webcam conectado!");
+
+            Thread t = new Thread(() => ReceberWebcam(cliente));
+
+            t.IsBackground = true;
+
+            t.Start();
+        }
+    }
+
 
     static void EnviarWebcamParaTodos(string frame, TcpClient remetente)
     {

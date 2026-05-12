@@ -1,9 +1,10 @@
 ﻿using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System.Drawing.Imaging;
-using System.Net.Sockets;
-using System.Linq;
 using System.Drawing.Imaging;
+using System.Linq;
+using System.Net.Sockets;
+using System.Text;
 
 namespace ClienteWinForms
 {
@@ -12,30 +13,43 @@ namespace ClienteWinForms
         VideoCapture camera;
         bool cameraLigada = false;
 
-        TcpClient cliente;
-        StreamReader reader;
-        StreamWriter writer;
+        TcpClient webcamCliente;
+        StreamReader webcamReader;
+        StreamWriter webcamWriter;
+        string ipServidor;
         string usuario;
+        
 
 
-
-        public FormVideo(TcpClient c, StreamReader r, StreamWriter w, string user)
+        public FormVideo(string ip)
         {
-
             InitializeComponent();
+            ipServidor = ip;
+            MessageBox.Show(ipServidor);
+            try
+            {
+                webcamCliente = new TcpClient(ipServidor, 6000);
+                MessageBox.Show("Conectado servidor webcam!");
 
+                NetworkStream stream = webcamCliente.GetStream();
 
-            cliente = c;
-            reader = r;
-            writer = w;
-            usuario = user;
+                webcamReader = new StreamReader(stream, Encoding.UTF8);
 
-            Thread t = new Thread(ReceberMensagens);
+                webcamWriter = new StreamWriter(stream, Encoding.UTF8)
+                    {
+                        AutoFlush = true
+                    };
 
-            t.IsBackground = true;
+                Thread t = new Thread(ReceberMensagens);
 
-            t.Start();
+                t.IsBackground = true;
 
+                t.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -45,7 +59,7 @@ namespace ClienteWinForms
             {
                 while (true)
                 {
-                    string msg = reader.ReadLine();
+                    string msg = webcamReader.ReadLine();
 
                     if (msg == null)
                         break;
@@ -162,10 +176,9 @@ namespace ClienteWinForms
 
                     byte[] imagemBytes = ms.ToArray();
 
-                    string base64 =
-                        Convert.ToBase64String(imagemBytes);
+                    string base64 = Convert.ToBase64String(imagemBytes);
 
-                    writer.WriteLine("WEBCAM|" + base64);
+                    webcamWriter.WriteLine(base64); 
                 }
             }
             catch

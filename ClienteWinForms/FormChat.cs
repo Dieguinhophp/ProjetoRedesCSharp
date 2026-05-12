@@ -13,10 +13,10 @@ namespace ClienteWinForms
         StreamReader reader;
         StreamWriter writer;
         string usuario;
+        string ipServidor;
 
 
-
-        public FormChat(TcpClient c, StreamReader r, StreamWriter w, string user)
+        public FormChat(TcpClient c, StreamReader r, StreamWriter w, string user, string ip)
         {
 
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace ClienteWinForms
             reader = r;
             writer = w;
             usuario = user;
+            ipServidor = ip;
 
             lblUsuario.Text = "Usuário: " + usuario;
 
@@ -141,7 +142,7 @@ namespace ClienteWinForms
 
         private void btnVideoCall_Click(object sender, EventArgs e)
         {
-            FormVideo video = new FormVideo(cliente, reader, writer, usuario);
+            FormVideo video = new FormVideo(ipServidor);
 
             video.Show();
         }

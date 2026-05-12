@@ -14,12 +14,14 @@ namespace ClienteWinForms
         TcpClient cliente;
         StreamReader reader;
         StreamWriter writer;
-        public FormLogin(TcpClient c, StreamReader r, StreamWriter w)
+        string ipServidor;
+        public FormLogin(TcpClient c, StreamReader r, StreamWriter w, string ip)
         {
             InitializeComponent();
             cliente = c;
             reader = r;
             writer = w;
+            ipServidor = ip;
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace ClienteWinForms
                 if (resposta == "LOGIN_OK")
                 {
   
-                    FormChat chat = new FormChat(cliente, reader, writer, txtUsuario.Text);
+                    FormChat chat = new FormChat(cliente, reader, writer, txtUsuario.Text, ipServidor);
                     chat.Show();
 
                     this.Hide();
