@@ -10,6 +10,10 @@ class Servidor
     static List<TcpClient> clientes = new List<TcpClient>();
     static Dictionary<TcpClient, string> nomes = new Dictionary<TcpClient, string>();
 
+    static Dictionary<TcpClient, StreamWriter>
+    webcamWriters =
+    new Dictionary<TcpClient, StreamWriter>();
+
 
     static TcpListener webcamServidor;
     static List<TcpClient> webcamClientes = new List<TcpClient>();
@@ -154,16 +158,7 @@ class Servidor
 
                         break;
 
-                    case "WEBCAM":
-
-                        if (partes.Length < 2)
-                            continue;
-
-                        string frameBase64 = partes[1];
-
-                        EnviarWebcamParaTodos(frameBase64, cliente);
-
-                        break;
+                    
 
 
                     case "LOGOUT":
@@ -248,15 +243,8 @@ class Servidor
                         if (c == cliente)
                             continue;
 
-                        StreamWriter writer =
-                            new StreamWriter(
-                                c.GetStream(),
-                                Encoding.UTF8)
-                            {
-                                AutoFlush = true
-                            };
-
-                        writer.WriteLine(frame);
+                        webcamWriters[c]
+                            .WriteLine(frame);
                     }
                     catch
                     {
@@ -272,6 +260,11 @@ class Servidor
         finally
         {
             webcamClientes.Remove(cliente);
+            if (webcamWriters.ContainsKey(cliente))
+            {
+                webcamWriters.Remove(cliente);
+            }
+
 
             try
             {
@@ -295,6 +288,13 @@ class Servidor
                 webcamServidor.AcceptTcpClient();
 
             webcamClientes.Add(cliente);
+            webcamWriters[cliente] =
+            new StreamWriter(
+        cliente.GetStream(),
+        Encoding.UTF8)
+    {
+        AutoFlush = true
+    };
 
             Console.WriteLine("Cliente webcam conectado!");
 
@@ -307,32 +307,7 @@ class Servidor
     }
 
 
-    static void EnviarWebcamParaTodos(string frame, TcpClient remetente)
-    {
-        foreach (var cliente in clientes)
-        {
-            try
-            {
-                if (cliente == remetente)
-                    continue;
-
-                NetworkStream stream = cliente.GetStream();
-
-                StreamWriter writer =
-                    new StreamWriter(stream, Encoding.UTF8)
-                    {
-                        AutoFlush = true
-                    };
-
-                writer.WriteLine("WEBCAM|" + frame);
-            }
-            catch
-            {
-
-            }
-        }
-    }
-
+    
 
 
     static void EnviarListaUsuarios()

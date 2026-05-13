@@ -112,6 +112,7 @@
             Controls.Add(picRemoto);
             Controls.Add(panel1);
             Name = "FormVideo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormVideo";
             FormClosed += FormVideo_FormClosed;
             panel1.ResumeLayout(false);

@@ -25,12 +25,11 @@ namespace ClienteWinForms
         {
             InitializeComponent();
             ipServidor = ip;
-            MessageBox.Show(ipServidor);
+            
             try
             {
                 webcamCliente = new TcpClient(ipServidor, 6000);
                 MessageBox.Show("Conectado servidor webcam!");
-
                 NetworkStream stream = webcamCliente.GetStream();
 
                 webcamReader = new StreamReader(stream, Encoding.UTF8);
@@ -64,35 +63,41 @@ namespace ClienteWinForms
                     if (msg == null)
                         break;
 
-                    if (msg.StartsWith("WEBCAM|"))
+                    if (!msg.StartsWith("FRAME|"))
+                        continue;
+
+                    string base64 =
+                        msg.Substring(6);
+
+                    byte[] imagemBytes =
+                        Convert.FromBase64String(base64);
+
+                    using (MemoryStream ms =
+                        new MemoryStream(imagemBytes))
                     {
-                        string base64 =
-                            msg.Substring(8);
-
-                        byte[] imagemBytes =
-                            Convert.FromBase64String(base64);
-
-                        using (MemoryStream ms =
-                            new MemoryStream(imagemBytes))
+                        using (Bitmap temp =
+                                new Bitmap(ms))
                         {
                             Bitmap bitmap =
-                                new Bitmap(ms);
+                                new Bitmap(temp);
 
-                            Invoke(new Action(() =>
+                            BeginInvoke(new Action(() =>
                             {
-                                if (picRemoto.Image != null)
-                                    picRemoto.Image.Dispose();
+                                Image imagemAnterior =
+                                    picRemoto.Image;
 
-                                picRemoto.Image =
-                                    (Bitmap)bitmap.Clone();
+                                picRemoto.Image = bitmap;
+
+                                if (imagemAnterior != null)
+                                    imagemAnterior.Dispose();
                             }));
                         }
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -132,20 +137,26 @@ namespace ClienteWinForms
                             Bitmap original = BitmapConverter.ToBitmap(frame);
 
                             Bitmap bitmap =
-                                new Bitmap(original, new System.Drawing.Size(320, 240));
+                                new Bitmap(original, new System.Drawing.Size(360, 320));
 
                             Invoke(new Action(() =>
                             {
-                                if (picLocal.Image != null)
-                                    picLocal.Image.Dispose();
+                                Image imagemAnterior = picLocal.Image;
 
                                 picLocal.Image = (Bitmap)bitmap.Clone();
+
+                                if (imagemAnterior != null)
+                                    imagemAnterior.Dispose();
+
+                                
                             }));
 
                             EnviarFrame(bitmap);
+                            original.Dispose();
+                            bitmap.Dispose();
                         }
 
-                        await Task.Delay(300);
+                        await Task.Delay(200);
                     }
 
                     frame.Dispose();
@@ -170,7 +181,7 @@ namespace ClienteWinForms
                         new EncoderParameters(1);
 
                     encoderParams.Param[0] =
-                        new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 30L);
+                        new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 15L);
 
                     bitmap.Save(ms, jpgEncoder, encoderParams);
 
@@ -178,7 +189,7 @@ namespace ClienteWinForms
 
                     string base64 = Convert.ToBase64String(imagemBytes);
 
-                    webcamWriter.WriteLine(base64); 
+                    webcamWriter.WriteLine("FRAME|" + base64);  
                 }
             }
             catch
@@ -204,10 +215,14 @@ namespace ClienteWinForms
 
             if (camera != null)
             {
+                
                 camera.Release();
                 camera.Dispose();
             }
-        
+            if (webcamCliente != null)
+            {
+                webcamCliente.Close();
+            }
         }
     }
 }
