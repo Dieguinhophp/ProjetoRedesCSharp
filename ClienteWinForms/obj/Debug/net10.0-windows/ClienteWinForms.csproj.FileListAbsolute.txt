@@ -25,3 +25,5 @@ C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\bin
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.csproj.AssemblyReference.cache
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteW.63BAC919.Up2Date
 C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.FormVideo.resources
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.FormSplash.resources
+C:\Users\Lordd\OneDrive\Área de Trabalho\ProjetoRedesCSharp\ClienteWinForms\obj\Debug\net10.0-windows\ClienteWinForms.Properties.Resources.resources

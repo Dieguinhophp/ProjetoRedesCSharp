@@ -28,73 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIp = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            label1 = new Label();
+            txtIp = new TextBox();
+            btnLogin = new Button();
+            panelBottom = new Panel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 44);
-            this.panel1.TabIndex = 7;
+            panel1.BackColor = Color.FromArgb(30, 60, 60);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(584, 51);
+            panel1.TabIndex = 7;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Digite o IP do Servidor:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(117, 244);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(138, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Digite o IP do Servidor:";
+            label1.Click += label1_Click;
             // 
             // txtIp
             // 
-            this.txtIp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.txtIp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIp.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIp.ForeColor = System.Drawing.Color.White;
-            this.txtIp.Location = new System.Drawing.Point(153, 145);
-            this.txtIp.Name = "txtIp";
-            this.txtIp.Size = new System.Drawing.Size(153, 16);
-            this.txtIp.TabIndex = 9;
-            this.txtIp.TextChanged += new System.EventHandler(this.txtIp_TextChanged);
+            txtIp.BackColor = Color.FromArgb(30, 55, 60);
+            txtIp.BorderStyle = BorderStyle.None;
+            txtIp.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtIp.ForeColor = Color.White;
+            txtIp.Location = new Point(263, 244);
+            txtIp.Margin = new Padding(4, 3, 4, 3);
+            txtIp.Name = "txtIp";
+            txtIp.Size = new Size(178, 16);
+            txtIp.TabIndex = 9;
+            txtIp.TextChanged += txtIp_TextChanged;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(104, 183);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(88, 38);
-            this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "Conectar";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            btnLogin.BackColor = Color.FromArgb(30, 60, 60);
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(226, 283);
+            btnLogin.Margin = new Padding(4, 3, 4, 3);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(103, 44);
+            btnLogin.TabIndex = 10;
+            btnLogin.Text = "Conectar";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // panelBottom
+            // 
+            panelBottom.BackColor = Color.FromArgb(30, 60, 60);
+            panelBottom.Dock = DockStyle.Bottom;
+            panelBottom.Location = new Point(0, 382);
+            panelBottom.Margin = new Padding(4, 3, 4, 3);
+            panelBottom.Name = "panelBottom";
+            panelBottom.Size = new Size(584, 29);
+            panelBottom.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.ChatGPT_Image_21_de_mai__de_2026__12_42_39;
+            pictureBox1.Location = new Point(180, 57);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(203, 159);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // FormIp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(312, 286);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtIp);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
-            this.Name = "FormIp";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormIp";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(584, 411);
+            Controls.Add(pictureBox1);
+            Controls.Add(panelBottom);
+            Controls.Add(btnLogin);
+            Controls.Add(txtIp);
+            Controls.Add(label1);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FormIp";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FormIp";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -104,5 +138,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIp;
         private System.Windows.Forms.Button btnLogin;
+        private Panel panelBottom;
+        private PictureBox pictureBox1;
     }
 }

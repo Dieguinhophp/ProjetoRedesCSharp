@@ -33,6 +33,7 @@
             picRemoto = new PictureBox();
             picLocal = new PictureBox();
             btnIniciarCamera = new Button();
+            panelBottom = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picRemoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picLocal).BeginInit();
@@ -66,7 +67,7 @@
             // 
             // picRemoto
             // 
-            picRemoto.BackColor = Color.FromArgb(30, 60, 60);
+            picRemoto.BackColor = Color.FromArgb(30, 55, 60);
             picRemoto.Location = new Point(12, 68);
             picRemoto.Name = "picRemoto";
             picRemoto.Size = new Size(307, 282);
@@ -77,7 +78,7 @@
             // 
             // picLocal
             // 
-            picLocal.BackColor = Color.FromArgb(30, 60, 60);
+            picLocal.BackColor = Color.FromArgb(30, 55, 60);
             picLocal.Location = new Point(427, 164);
             picLocal.Name = "picLocal";
             picLocal.Size = new Size(186, 186);
@@ -101,12 +102,23 @@
             btnIniciarCamera.UseVisualStyleBackColor = false;
             btnIniciarCamera.Click += btnIniciarCamera_Click;
             // 
+            // panelBottom
+            // 
+            panelBottom.BackColor = Color.FromArgb(30, 60, 60);
+            panelBottom.Dock = DockStyle.Bottom;
+            panelBottom.Location = new Point(0, 433);
+            panelBottom.Margin = new Padding(4, 3, 4, 3);
+            panelBottom.Name = "panelBottom";
+            panelBottom.Size = new Size(625, 29);
+            panelBottom.TabIndex = 12;
+            // 
             // FormVideo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(625, 400);
+            ClientSize = new Size(625, 462);
+            Controls.Add(panelBottom);
             Controls.Add(btnIniciarCamera);
             Controls.Add(picLocal);
             Controls.Add(picRemoto);
@@ -128,5 +140,6 @@
         private PictureBox picLocal;
         private Button btnEncerrar;
         private Button btnIniciarCamera;
+        private Panel panelBottom;
     }
 }

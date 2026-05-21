@@ -33,9 +33,7 @@
             btnEnviar = new Button();
             panelTop = new Panel();
             btnLogout = new Button();
-            label1 = new Label();
             lblUsuario = new Label();
-            lblStatus = new Label();
             panelBottom = new Panel();
             lstUsuarios = new ListBox();
             btnVideoCall = new Button();
@@ -91,9 +89,7 @@
             // 
             panelTop.BackColor = Color.FromArgb(30, 60, 60);
             panelTop.Controls.Add(btnLogout);
-            panelTop.Controls.Add(label1);
             panelTop.Controls.Add(lblUsuario);
-            panelTop.Controls.Add(lblStatus);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(0, 0);
             panelTop.Margin = new Padding(4, 3, 4, 3);
@@ -116,18 +112,6 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.LimeGreen;
-            label1.Location = new Point(601, 20);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(19, 15);
-            label1.TabIndex = 6;
-            label1.Text = "\U0001f7e2";
-            // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
@@ -139,18 +123,6 @@
             lblUsuario.Size = new Size(64, 17);
             lblUsuario.TabIndex = 0;
             lblUsuario.Text = "Usuário: ";
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.ForeColor = Color.LimeGreen;
-            lblStatus.Location = new Point(546, 20);
-            lblStatus.Margin = new Padding(4, 0, 4, 0);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(53, 15);
-            lblStatus.TabIndex = 5;
-            lblStatus.Text = "Online: ";
             // 
             // panelBottom
             // 
@@ -222,8 +194,6 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Panel panelBottom;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstUsuarios;
         private System.Windows.Forms.Button btnLogout;
         private Button btnVideoCall;

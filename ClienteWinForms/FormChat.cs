@@ -138,13 +138,18 @@ namespace ClienteWinForms
             }
         }
 
-        
+
 
         private void btnVideoCall_Click(object sender, EventArgs e)
         {
             FormVideo video = new FormVideo(ipServidor);
 
             video.Show();
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

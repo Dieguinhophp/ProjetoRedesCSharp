@@ -148,7 +148,7 @@ namespace ClienteWinForms
                                 if (imagemAnterior != null)
                                     imagemAnterior.Dispose();
 
-                                
+
                             }));
 
                             EnviarFrame(bitmap);
@@ -166,6 +166,8 @@ namespace ClienteWinForms
             {
                 MessageBox.Show(ex.Message);
             }
+
+            
         }
         void EnviarFrame(Bitmap bitmap)
         {

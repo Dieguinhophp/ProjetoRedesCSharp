@@ -10,16 +10,16 @@ namespace ClienteWinForms
 
     public partial class FormIp : Form
     {
-        
+
         public FormIp()
         {
             InitializeComponent();
-            
+
         }
 
         private void txtIp_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace ClienteWinForms
                 {
                     AutoFlush = true
                 };
-                
+
 
                 FormLogin login = new FormLogin(cliente, reader, writer, txtIp.Text);
 
@@ -48,6 +48,16 @@ namespace ClienteWinForms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

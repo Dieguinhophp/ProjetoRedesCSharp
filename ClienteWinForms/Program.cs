@@ -15,7 +15,7 @@ namespace ClienteWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormIp());
+            Application.Run(new FormSplash());
         }
     }
 }
