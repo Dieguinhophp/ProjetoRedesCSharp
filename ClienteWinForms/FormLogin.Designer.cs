@@ -35,8 +35,10 @@
             btnLogin = new Button();
             btnRegistrar = new Button();
             panel1 = new Panel();
-            panelBottom = new Panel();
             pictureBox2 = new PictureBox();
+            panelBottom = new Panel();
+            cmbCargo = new ComboBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -49,9 +51,9 @@
             label1.Location = new Point(49, 89);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(51, 15);
+            label1.Size = new Size(54, 15);
             label1.TabIndex = 0;
-            label1.Text = "Usuário";
+            label1.Text = "Usuário:";
             // 
             // txtUsuario
             // 
@@ -71,12 +73,12 @@
             label2.AutoSize = true;
             label2.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(49, 150);
+            label2.Location = new Point(49, 132);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(42, 15);
+            label2.Size = new Size(45, 15);
             label2.TabIndex = 2;
-            label2.Text = "Senha";
+            label2.Text = "Senha:";
             // 
             // txtSenha
             // 
@@ -84,7 +86,7 @@
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSenha.ForeColor = Color.White;
-            txtSenha.Location = new Point(132, 150);
+            txtSenha.Location = new Point(132, 132);
             txtSenha.Margin = new Padding(4, 3, 4, 3);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(178, 15);
@@ -98,7 +100,7 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(49, 208);
+            btnLogin.Location = new Point(49, 240);
             btnLogin.Margin = new Padding(4, 3, 4, 3);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(103, 44);
@@ -113,7 +115,7 @@
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.White;
-            btnRegistrar.Location = new Point(208, 208);
+            btnRegistrar.Location = new Point(207, 240);
             btnRegistrar.Margin = new Padding(4, 3, 4, 3);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(103, 44);
@@ -130,18 +132,8 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(355, 51);
+            panel1.Size = new Size(363, 51);
             panel1.TabIndex = 6;
-            // 
-            // panelBottom
-            // 
-            panelBottom.BackColor = Color.FromArgb(30, 60, 60);
-            panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(0, 301);
-            panelBottom.Margin = new Padding(4, 3, 4, 3);
-            panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(355, 29);
-            panelBottom.TabIndex = 13;
             // 
             // pictureBox2
             // 
@@ -153,12 +145,50 @@
             pictureBox2.TabIndex = 14;
             pictureBox2.TabStop = false;
             // 
+            // panelBottom
+            // 
+            panelBottom.BackColor = Color.FromArgb(30, 60, 60);
+            panelBottom.Dock = DockStyle.Bottom;
+            panelBottom.Location = new Point(0, 301);
+            panelBottom.Margin = new Padding(4, 3, 4, 3);
+            panelBottom.Name = "panelBottom";
+            panelBottom.Size = new Size(363, 29);
+            panelBottom.TabIndex = 13;
+            // 
+            // cmbCargo
+            // 
+            cmbCargo.BackColor = Color.FromArgb(30, 55, 60);
+            cmbCargo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCargo.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCargo.ForeColor = Color.White;
+            cmbCargo.FormattingEnabled = true;
+            cmbCargo.Location = new Point(132, 180);
+            cmbCargo.Name = "cmbCargo";
+            cmbCargo.Size = new Size(178, 23);
+            cmbCargo.TabIndex = 14;
+            cmbCargo.SelectedIndexChanged += cmbCargo_SelectedIndexChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Constantia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(51, 183);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 15);
+            label3.TabIndex = 15;
+            label3.Text = "Cargo:";
+            label3.Click += label3_Click;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(355, 330);
+            ClientSize = new Size(363, 330);
+            Controls.Add(label3);
+            Controls.Add(cmbCargo);
             Controls.Add(panelBottom);
             Controls.Add(panel1);
             Controls.Add(btnRegistrar);
@@ -189,5 +219,7 @@
         private System.Windows.Forms.Panel panel1;
         private Panel panelBottom;
         private PictureBox pictureBox2;
+        private ComboBox cmbCargo;
+        private Label label3;
     }
 }

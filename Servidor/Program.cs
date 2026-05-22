@@ -122,14 +122,14 @@ class Servidor
 
                     case "REGISTER":
 
-                        if (partes.Length < 3)
+                        if (partes.Length < 4)
                         {
                             writer.WriteLine("REGISTER_ERRO");
                             continue;
                         }
 
                         bool registro =
-                            Banco.Registrar(partes[1], partes[2]);
+                            Banco.Registrar(partes[1], partes[2], partes[3]);
 
                         writer.WriteLine(
                             registro
@@ -149,8 +149,11 @@ class Servidor
                             ? nomes[cliente]
                             : "Desconhecido";
 
+                        string cargo =
+                            Banco.ObterCargo(nome);
+
                         string msgFinal =
-                            nome + ": " + partes[1];
+                            "[" + cargo + "] " + nome + ": " + partes[1];
 
                         Console.WriteLine(msgFinal);
 
@@ -316,7 +319,9 @@ class Servidor
 
         foreach (var nome in nomes.Values)
         {
-            lista += nome + ",";
+            string cargo = Banco.ObterCargo(nome);
+
+            lista += nome + ":" + cargo + ",";
         }
 
         lista = lista.TrimEnd(',');

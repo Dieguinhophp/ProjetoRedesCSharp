@@ -182,6 +182,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
+            BackgroundImage = Properties.Resources.ChatGPT_Image_21_de_mai__de_2026__22_38_50;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(915, 532);
             Controls.Add(btnVideoCall);
             Controls.Add(lstUsuarios);

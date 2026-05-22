@@ -82,15 +82,39 @@ namespace ClienteWinForms
                             foreach (var u in usuarios)
                             {
                                 if (!string.IsNullOrWhiteSpace(u))
-                                    lstUsuarios.Items.Add(u);
+                                {
+                                    string[] dados = u.Split(':');
+
+                                    if (dados.Length >= 2)
+                                    {
+                                        string nome = dados[0];
+                                        string cargo = dados[1];
+
+                                        lstUsuarios.Items.Add(
+                                            "🟢 " + nome + " [" + cargo + "]"
+                                        );
+                                    }
+                                }
                             }
                         }
                         else
                         {
-                            if (msg.StartsWith(usuario + ":"))
-                                rtbChat.SelectionColor = Color.White;
+                            if (msg.Contains("[Capitão]"))
+                            {
+                                rtbChat.SelectionColor = Color.Orange;
+                            }
+                            else if (msg.Contains("[Supervisor]"))
+                            {
+                                rtbChat.SelectionColor = Color.Red;
+                            }
+                            else if (msg.Contains("[Coordenador]"))
+                            {
+                                rtbChat.SelectionColor = Color.DeepSkyBlue;
+                            }
                             else
-                                rtbChat.SelectionColor = Color.ForestGreen;
+                            {
+                                rtbChat.SelectionColor = Color.White;
+                            }
 
                             rtbChat.AppendText(msg + Environment.NewLine);
                             rtbChat.ScrollToCaret();

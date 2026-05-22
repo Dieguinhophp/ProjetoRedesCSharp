@@ -99,5 +99,25 @@ namespace ClienteWinForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_de_mai__de_2026__22_38_50 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21 de mai. de 2026, 22_38_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_05_21_at_22_36_35 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-05-21 at 22.36.35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

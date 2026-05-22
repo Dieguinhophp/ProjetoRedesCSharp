@@ -3,40 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formsplash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formsplash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formvideo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formvideo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formvideo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formvideo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formsplash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formsplash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FD790DC-0CBA-2596-271F-8A5F60111849}|Cliente\\Cliente.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD790DC-0CBA-2596-271F-8A5F60111849}|Cliente\\Cliente.csproj|solutionrelative:cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9064B4AF-78AD-9CDB-C5CC-9241FD512A74}|Servidor\\Servidor.csproj|solutionrelative:servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|c:\\users\\lordd\\onedrive\\\u00E1rea de trabalho\\projetoredescsharp\\clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CE26F7D-EAFB-4966-9AD9-87051B57215E}|ClienteWinForms\\ClienteWinForms.csproj|solutionrelative:clientewinforms\\formip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,55 +54,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 278,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "FormVideo.cs",
+              "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormVideo.cs",
+              "RelativeDocumentMoniker": "ClienteWinForms\\FormVideo.cs",
+              "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormVideo.cs",
+              "RelativeToolTip": "ClienteWinForms\\FormVideo.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAALkAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T02:07:29.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormChat.cs",
+              "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormChat.cs",
+              "RelativeDocumentMoniker": "ClienteWinForms\\FormChat.cs",
+              "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormChat.cs",
+              "RelativeToolTip": "ClienteWinForms\\FormChat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T01:09:40.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FormVideo.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormVideo.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormVideo.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormVideo.cs [Projeto]",
               "RelativeToolTip": "ClienteWinForms\\FormVideo.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T02:38:36.071Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2026-05-12T02:38:36.071Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "FormIp.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormIp.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormIp.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormIp.cs [Projeto]",
               "RelativeToolTip": "ClienteWinForms\\FormIp.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T01:42:34.025Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2026-05-12T01:42:34.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormSplash.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormSplash.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormSplash.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormSplash.cs [Projeto]",
               "RelativeToolTip": "ClienteWinForms\\FormSplash.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:48:18.182Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2026-05-21T15:48:18.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "FormLogin.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormLogin.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormLogin.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormLogin.cs [Projeto]",
               "RelativeToolTip": "ClienteWinForms\\FormLogin.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T01:35:46.387Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2026-05-12T01:35:46.387Z"
             },
             {
               "$type": "Document",
@@ -105,12 +135,23 @@
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormChat.cs [Projeto]",
               "RelativeToolTip": "ClienteWinForms\\FormChat.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T20:30:45.864Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2026-05-21T20:30:45.864Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Banco.cs",
+              "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Banco.cs",
+              "RelativeDocumentMoniker": "Servidor\\Banco.cs",
+              "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Banco.cs",
+              "RelativeToolTip": "Servidor\\Banco.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T00:34:20.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "FormIp.cs",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormIp.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormIp.cs",
@@ -118,47 +159,31 @@
               "RelativeToolTip": "ClienteWinForms\\FormIp.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T01:42:36.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T01:42:36.074Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Cliente\\Program.cs",
-              "RelativeDocumentMoniker": "Cliente\\Program.cs",
-              "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Cliente\\Program.cs",
-              "RelativeToolTip": "Cliente\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T21:46:02.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Program.cs",
               "RelativeDocumentMoniker": "Servidor\\Program.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\Servidor\\Program.cs",
               "RelativeToolTip": "Servidor\\Program.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAIBJwKAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAADcBAAAAAAAAAAAUwEMBAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T15:59:55.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-31T15:59:55.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormLogin.cs",
               "RelativeDocumentMoniker": "ClienteWinForms\\FormLogin.cs",
               "ToolTip": "C:\\Users\\Lordd\\OneDrive\\\u00C1rea de Trabalho\\ProjetoRedesCSharp\\ClienteWinForms\\FormLogin.cs",
               "RelativeToolTip": "ClienteWinForms\\FormLogin.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwBAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwEwAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T01:35:48.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T01:35:48.788Z"
             }
           ]
         },

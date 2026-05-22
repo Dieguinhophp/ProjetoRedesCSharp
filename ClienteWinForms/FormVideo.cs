@@ -18,14 +18,14 @@ namespace ClienteWinForms
         StreamWriter webcamWriter;
         string ipServidor;
         string usuario;
-        
+
 
 
         public FormVideo(string ip)
         {
             InitializeComponent();
             ipServidor = ip;
-            
+
             try
             {
                 webcamCliente = new TcpClient(ipServidor, 6000);
@@ -35,9 +35,9 @@ namespace ClienteWinForms
                 webcamReader = new StreamReader(stream, Encoding.UTF8);
 
                 webcamWriter = new StreamWriter(stream, Encoding.UTF8)
-                    {
-                        AutoFlush = true
-                    };
+                {
+                    AutoFlush = true
+                };
 
                 Thread t = new Thread(ReceberMensagens);
 
@@ -156,7 +156,7 @@ namespace ClienteWinForms
                             bitmap.Dispose();
                         }
 
-                        await Task.Delay(200);
+                        await Task.Delay(100);
                     }
 
                     frame.Dispose();
@@ -166,8 +166,8 @@ namespace ClienteWinForms
             {
                 MessageBox.Show(ex.Message);
             }
-
             
+
         }
         void EnviarFrame(Bitmap bitmap)
         {
@@ -183,7 +183,7 @@ namespace ClienteWinForms
                         new EncoderParameters(1);
 
                     encoderParams.Param[0] =
-                        new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 15L);
+                        new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 60L);
 
                     bitmap.Save(ms, jpgEncoder, encoderParams);
 
@@ -191,7 +191,7 @@ namespace ClienteWinForms
 
                     string base64 = Convert.ToBase64String(imagemBytes);
 
-                    webcamWriter.WriteLine("FRAME|" + base64);  
+                    webcamWriter.WriteLine("FRAME|" + base64);
                 }
             }
             catch
@@ -217,7 +217,7 @@ namespace ClienteWinForms
 
             if (camera != null)
             {
-                
+
                 camera.Release();
                 camera.Dispose();
             }
@@ -225,6 +225,12 @@ namespace ClienteWinForms
             {
                 webcamCliente.Close();
             }
+        }
+
+        private void Desligar(object sender, EventArgs e)
+        {
+            
+            camera.Dispose();
         }
     }
 }

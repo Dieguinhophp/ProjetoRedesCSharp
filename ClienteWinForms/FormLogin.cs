@@ -22,6 +22,14 @@ namespace ClienteWinForms
             reader = r;
             writer = w;
             ipServidor = ip;
+
+            cmbCargo.Items.Add("Brigadista");
+            cmbCargo.Items.Add("Bombeiro");
+            cmbCargo.Items.Add("Capitão");
+            cmbCargo.Items.Add("Supervisor");
+            cmbCargo.Items.Add("Coordenador");
+
+            cmbCargo.SelectedIndex = 0;
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -44,7 +52,7 @@ namespace ClienteWinForms
 
                 if (resposta == "LOGIN_OK")
                 {
-  
+
                     FormChat chat = new FormChat(cliente, reader, writer, txtUsuario.Text, ipServidor);
                     chat.Show();
 
@@ -72,7 +80,7 @@ namespace ClienteWinForms
 
             try
             {
-                writer.WriteLine($"REGISTER|{txtUsuario.Text}|{txtSenha.Text}");
+                writer.WriteLine($"REGISTER|{txtUsuario.Text}|{txtSenha.Text}|{cmbCargo.Text}");
 
                 string resposta = reader.ReadLine();
 
@@ -92,7 +100,17 @@ namespace ClienteWinForms
                 MessageBox.Show("Erro ao comunicar com o servidor!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
