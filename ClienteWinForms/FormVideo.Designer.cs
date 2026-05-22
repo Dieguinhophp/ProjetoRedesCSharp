@@ -34,14 +34,17 @@
             picLocal = new PictureBox();
             btnIniciarCamera = new Button();
             panelBottom = new Panel();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picRemoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picLocal).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 60, 60);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnEncerrar);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -112,6 +115,16 @@
             panelBottom.Size = new Size(625, 29);
             panelBottom.TabIndex = 12;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = Properties.Resources.ChatGPT_Image_21_de_mai__de_2026__17_28_39;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(-57, -31);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(245, 117);
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
+            // 
             // FormVideo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -130,6 +143,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picRemoto).EndInit();
             ((System.ComponentModel.ISupportInitialize)picLocal).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -141,5 +155,6 @@
         private Button btnEncerrar;
         private Button btnIniciarCamera;
         private Panel panelBottom;
+        private PictureBox pictureBox2;
     }
 }

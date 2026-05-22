@@ -32,12 +32,14 @@
             txtMensagem = new TextBox();
             btnEnviar = new Button();
             panelTop = new Panel();
+            pictureBox2 = new PictureBox();
             btnLogout = new Button();
             lblUsuario = new Label();
             panelBottom = new Panel();
             lstUsuarios = new ListBox();
             btnVideoCall = new Button();
             panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // rtbChat
@@ -88,6 +90,7 @@
             // panelTop
             // 
             panelTop.BackColor = Color.FromArgb(30, 60, 60);
+            panelTop.Controls.Add(pictureBox2);
             panelTop.Controls.Add(btnLogout);
             panelTop.Controls.Add(lblUsuario);
             panelTop.Dock = DockStyle.Top;
@@ -96,6 +99,17 @@
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(915, 58);
             panelTop.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = Properties.Resources.ChatGPT_Image_21_de_mai__de_2026__17_28_39;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(-56, -26);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(245, 117);
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // btnLogout
             // 
@@ -117,12 +131,13 @@
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Constantia", 10.25F);
             lblUsuario.ForeColor = Color.White;
-            lblUsuario.Location = new Point(12, 17);
+            lblUsuario.Location = new Point(196, 24);
             lblUsuario.Margin = new Padding(4, 0, 4, 0);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(64, 17);
             lblUsuario.TabIndex = 0;
             lblUsuario.Text = "Usuário: ";
+            lblUsuario.Click += lblUsuario_Click;
             // 
             // panelBottom
             // 
@@ -181,6 +196,7 @@
             Text = "FormChat";
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -197,5 +213,6 @@
         private System.Windows.Forms.ListBox lstUsuarios;
         private System.Windows.Forms.Button btnLogout;
         private Button btnVideoCall;
+        private PictureBox pictureBox2;
     }
 }
