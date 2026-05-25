@@ -1,7 +1,4 @@
 ﻿using System.Net.Sockets;
-using OpenCvSharp;
-using OpenCvSharp.Extensions;
-using System.Drawing;
 
 namespace ClienteWinForms
 {

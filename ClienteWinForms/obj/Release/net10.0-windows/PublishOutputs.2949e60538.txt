@@ -1,0 +1,10 @@
+C:\Users\Lordd\OneDrive\Documentos\Projetos\ClienteWinForms.exe
+C:\Users\Lordd\OneDrive\Documentos\Projetos\ClienteWinForms.dll
+C:\Users\Lordd\OneDrive\Documentos\Projetos\ClienteWinForms.deps.json
+C:\Users\Lordd\OneDrive\Documentos\Projetos\ClienteWinForms.runtimeconfig.json
+C:\Users\Lordd\OneDrive\Documentos\Projetos\ClienteWinForms.dll.config
+C:\Users\Lordd\OneDrive\Documentos\Projetos\ClienteWinForms.pdb
+C:\Users\Lordd\OneDrive\Documentos\Projetos\OpenCvSharp.dll
+C:\Users\Lordd\OneDrive\Documentos\Projetos\OpenCvSharp.Extensions.dll
+C:\Users\Lordd\OneDrive\Documentos\Projetos\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\Lordd\OneDrive\Documentos\Projetos\runtimes\win-x64\native\opencv_videoio_ffmpeg4130_64.dll

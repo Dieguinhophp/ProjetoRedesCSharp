@@ -1,8 +1,6 @@
 ﻿using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System.Drawing.Imaging;
-using System.Drawing.Imaging;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 
